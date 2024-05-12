@@ -8,10 +8,13 @@ export async function getStaticProps() {
 
 export default function PokemonPage({ allPokemons }) {
   return (
-    <ul>
+    <div>
       {allPokemons.map(poke => (
-        <li key={poke.url}>{poke.name}</li>
+        <dl>
+          <dt key={poke.url}>{poke.name}</dt>
+          <dd>{poke.url}</dd>
+        </dl>
       ))}
-    </ul>
+    </div>
   );
 }
